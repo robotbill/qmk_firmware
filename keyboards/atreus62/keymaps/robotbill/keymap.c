@@ -49,7 +49,7 @@
  * ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
  * │ SHIFT │   Z   │   X   │   C   │   V   │   B   ├───────┐  ┌───────┤   N   │   M   │   ,   │   .   │   /   │ SHIFT │
  * ├───────┼───────┼───────┼───────┼───────┼───────┤       │  │       ├───────┼───────┼───────┼───────┼───────┼───────┤
- * │       │       │       │  OPT  │  CMD  │ LOWER │ ENTER │  │ SPACE │ RAISE │  CMD  │  OPT  │       │       │       │
+ * │       │       │  OPT  │  CMD  │ LOWER │ ENTER │       │  │       │ SPACE │ RAISE │  CMD  │  OPT  │       │       │
  * └───────┴───────┴───────┴───────┴───────┴───────┴───────┘  └───────┴───────┴───────┴───────┴───────┴───────┴───────┘
  */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                    ├────────┼────────┼────────┼────────┼────────┼────────┤
       KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                        KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐  ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-      XXXXXXX, XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,  LOWER , KC_ENT ,    KC_SPC , RAISE  , KC_RGUI, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX
+      XXXXXXX, XXXXXXX, KC_LALT, KC_LGUI,  LOWER , KC_ENT , XXXXXXX,    XXXXXXX, KC_SPC , RAISE  , KC_RGUI, KC_RALT, XXXXXXX, XXXXXXX
   //└────────┴────────┴────────┴────────┴────────┴────────┴────────┘  └────────┴────────┴────────┴────────┴────────┴────────┴────────┘
   ),
 
