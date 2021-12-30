@@ -44,13 +44,12 @@ static uint16_t auto_pointer_layer_timer = 0;
 
 #define LOWER MO(LAYER_LOWER)
 #define RAISE MO(LAYER_RAISE)
-#define MOUSE MO(LAYER_POINTER)
-#define PT_Z LT(LAYER_POINTER, KC_Z)
-#define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
+#define POINT MO(LAYER_POINTER)
+#define PT_SPC LT(LAYER_POINTER, KC_SPC)
+#define TT_PT TT(LAYER_POINTER)
 
 // Tap for Escape, hold for Control
 #define KC_ESCC MT(MOD_LCTL, KC_ESC)
-#define KC_SPCM LT(MOUSE, KC_SPC)
 
 // Spectacle/Rectangle Window Actions
 // Left half
@@ -82,10 +81,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        KC_ESCC,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_LSFT,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, KC_LSFT,
+       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_LSFT,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                   KC_LGUI,  LOWER,  KC_ENT,      RAISE, KC_SPCM,
-                                           KC_LALT,   MOUSE,     KC_RALT
+                                   KC_LALT,  LOWER,  KC_ENT,      RAISE, PT_SPC,
+                                           KC_LGUI,   TT_PT,     KC_RALT
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
@@ -108,9 +107,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
         KC_F12,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,      KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, _______, _______, _______, _______, _______,    _______,  WIN_TL,  WIN_TP,  WIN_TR, _______, _______,
+       _______, KC_MINS, KC_UNDS,  KC_EQL, KC_PLUS, _______,    _______,  WIN_TL,  WIN_TP,  WIN_TR, _______, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, _______, _______, _______, _______, _______,    _______,  WIN_LT, WIN_CTR,  WIN_RT, _______, _______,
+       _______, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC, _______,    _______,  WIN_LT, WIN_CTR,  WIN_RT, _______, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        _______, _______, _______, _______, _______, _______,    _______,  WIN_BL,  WIN_BT,  WIN_BR, _______, _______,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
@@ -125,7 +124,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DPI_MOD, S_D_MOD,    S_D_MOD, DPI_MOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,    XXXXXXX, KC_BTN1, KC_BTN3, KC_BTN2, KC_RGUI, XXXXXXX,
+       XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_BTN1, XXXXXXX,    XXXXXXX, KC_BTN1, KC_BTN3, KC_BTN2, KC_RGUI, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX, DRGSCRL, SNIPING, DRGSCRL, XXXXXXX,    XXXXXXX, XXXXXXX, SNIPING, DRGSCRL, _______, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
